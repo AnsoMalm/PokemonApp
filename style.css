@@ -1,3 +1,89 @@
-body {
-	background-color: white;
+* {
+	box-sizing: border-box;
+	padding: 0; 
+	margin: 0; 
 }
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(44, 43, 43);
+	font-family: 'Play', sans-serif;
+	color: rgb(173, 142, 42); 
+}
+header {
+	font-family: 'Carter One', cursive;
+	color: rgb(255,214,4);
+	margin: 0.3em 3em; 
+	text-shadow: 1px 1px 2px red, 0 0 1em rgb(92, 184, 58), 0 0 0.2em rgb(157, 248, 124);
+	font-size: 23px;
+	text-align: center;
+}
+
+main {
+	margin: 0.2em 1em;  
+	padding: 1em;
+	text-align: center;
+}
+h2 {
+	margin: 0.2em; 
+}
+
+#upper-text-container {
+	background-color: rgb(84, 76, 76);
+	padding: 2em; 
+	margin: 0.3em 0.3em; 
+}
+
+#select-buttons {
+	margin: 1em; 
+}
+
+#members-btn, #team-btn {
+	padding: 0.7em; 
+	border-radius: 20px;
+	background-color: #E3350D;
+	border: 1px solid black; 
+	font-weight: bold;
+	margin: 0.3em;
+	background: linear-gradient(to bottom right, #d12847, #f4ff5a);
+	border: 0;
+	border-radius: 12px;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block;
+	font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 2.5;
+	outline: transparent;
+	padding: 0 1rem;
+	text-align: center;
+	text-decoration: none;
+	transition: box-shadow .2s ease-in-out;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	white-space: nowrap;
+  }
+  
+  #members-btn:not([disabled]):focus {
+	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  }
+  
+  #team-btn:not([disabled]):focus {
+	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  }
+  
+  #members-btn:not([disabled]):hover {
+	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  }
+  
+  #team-btn:not([disabled]):hover {
+	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+
+
