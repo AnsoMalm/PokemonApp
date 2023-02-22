@@ -9,10 +9,13 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: rgb(44, 43, 43);
+	background-color: rgb(44, 43, 43); 
 	font-family: 'Play', sans-serif;
 	color: rgb(173, 142, 42); 
 }
+
+/*backgroundcolor på sidan  rgb(44, 43, 43);*/
+
 header {
 	font-family: 'Carter One', cursive;
 	color: rgb(255,214,4);
@@ -41,7 +44,7 @@ h2 {
 	margin: 1em; 
 }
 
-#members-btn, #team-btn {
+#champion-btn, #team-btn, #pic-me {
 	padding: 0.7em; 
 	border-radius: 20px;
 	background-color: #E3350D;
@@ -69,7 +72,7 @@ h2 {
 	white-space: nowrap;
   }
   
-  #members-btn:not([disabled]):focus {
+  #champion-btn:not([disabled]):focus {
 	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
   }
   
@@ -77,13 +80,31 @@ h2 {
 	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
   }
   
-  #members-btn:not([disabled]):hover {
+  #champion-btn:not([disabled]):hover {
 	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
   }
   
   #team-btn:not([disabled]):hover {
 	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
 }
+  #pic-me:hover {
+	color:rgb(44, 43, 43);
+	background-color: #E3350D;
+  }
 
+
+
+#pokemon-sök[type=text] {
+	width: 50%;
+	padding: 0.5em; 
+}
+
+
+#pokemon-container {
+	border:rgb(44, 43, 43);
+	background-color: rgb(119, 110, 110);
+	margin: 1em 1em; 
+	height: 100vh; 
+}
 
 

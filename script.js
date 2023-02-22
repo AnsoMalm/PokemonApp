@@ -1,7 +1,7 @@
 
 
 const buttons = {
-	membersButton: document.querySelector('#members-btn'),
+	membersButton: document.querySelector('#champion-btn'),
 	teamButton: document.querySelector('#team-btn')
 }
 
