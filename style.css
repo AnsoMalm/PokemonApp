@@ -40,6 +40,7 @@ h2 {
 	margin: 0.3em 0.3em; 
 }
 
+
 #select-buttons {
 	margin: 1em; 
 }
@@ -93,16 +94,48 @@ h2 {
   }
 
 
-
-#pokemon-sök[type=text] {
+/*#pokemon-sök[type=text] {
 	width: 50%;
 	padding: 0.5em; 
+}*/
+
+.overlay {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 100vw;
+	height: 100vh;
+	padding: 3em;
+
+}
+.overlay > * {
+	background-color: rgb(147, 146, 141);
+	padding: 1em;
+	border-radius: 0.5em;
+	height: 100vh;
+	width: 100vh;
+	
+	/* TODO: box-shadow */
+}
+/*
+#pokemon-list-container {
+	border:rgb(44, 43, 43);
+	background-color: rgb(172, 156, 156);
+	margin: 1em 1em; 
+	position: relative;
+	padding: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.5;
+	transition: opacity .5s;
 }
 
-
-#pokemon-container {
+#my-team-container {
+	background-color: beige;
 	border:rgb(44, 43, 43);
-	background-color: rgb(119, 110, 110);
 	margin: 1em 1em; 
 	height: 100vh; 
 }
