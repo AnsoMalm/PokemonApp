@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Pokemon App</title>
 	<link rel="stylesheet" href="style.css">
-	<script src="script.js" type="module"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Lora&family=Patrick+Hand&family=Roboto:wght@300&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Lora&family=Patrick+Hand&family=Play:wght@700&family=Roboto:ital,wght@0,300;1,700&display=swap" rel="stylesheet">
 <header>
@@ -16,8 +15,9 @@
 	<main>
 		<section id="upper-text-container">
 			<div id="upper-text">
-			<h2>The Game is on!</h2>
-			<p>Här väljer du dina lagmedlemmar och kan tävla med dem i en match mot andra. Det finns en hel del Pokemon att välja emellan. Lycka till!
+				<h2>The Game is on!</h2>
+				<p>Här väljer du dina lagmedlemmar och kan tävla med dem i en match mot andra. Det finns en hel del Pokemon att välja emellan. Lycka till!
+				</p>
 			</div>
 		</section>
 
@@ -25,10 +25,23 @@
 			<button id="champion-btn">Find Champions</button>
 			<button id="team-btn">My Team</button>
 		</section>
+		
+		<div class="vy-1">
+			<section class="pokemon-input">
+					<label for="input" id="search-label">Sök efter din pokemon:</label>
+					<input type="text" id="search-pokemon" placeholder="Sök här...">
+					
+			</section>
+			<div class="pokemons-container"></div>
+		</div>
 
-		<section id="pokemon-list-container">
-		</section>
+		<div class="vy-2-invisible">
+			<section class="my-team">
+				<h3>My Team</h3>
+				<div></div>
+			</section>
+		</div>
 	</main>
-
+	<script src="script.js" type="module"></script>
 </body>
 </html>
