@@ -29,9 +29,17 @@ main {
 	margin: 0.2em 1em;  
 	padding: 1em;
 	text-align: center;
+	height: 100vh;
 }
+
 h2 {
+	font-size: 50px;
 	margin: 0.2em; 
+}
+h3 {
+	font-size: 40px;
+	margin-top: 1em;
+	padding: 0.3em; 
 }
 
 #upper-text-container {
@@ -45,7 +53,7 @@ h2 {
 	margin: 1em; 
 }
 
-#champion-btn, #team-btn, #pic-me {
+#champion-btn, #team-btn {
 	padding: 0.7em; 
 	border-radius: 20px;
 	background-color: #E3350D;
@@ -88,53 +96,26 @@ h2 {
   #team-btn:not([disabled]):hover {
 	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
 }
-  #pic-me:hover {
-	color:rgb(44, 43, 43);
-	background-color: #E3350D;
-  }
 
 
-/*#pokemon-sök[type=text] {
+#search-pokemon[type=text] {
 	width: 50%;
 	padding: 0.5em; 
-}*/
-
-.overlay {
-	position: relative;
-	left: 0px;
-	top: 0px;
-	background-color: rgba(0, 0, 0, 0.5);
-	width: 100vw;
-	height: 100vh;
-	padding: 3em;
-
+	border: none;
+	border-radius: 20px; 
+	margin-top: 2em; 
 }
-.overlay > * {
-	background-color: rgb(147, 146, 141);
-	padding: 1em;
-	border-radius: 0.5em;
-	height: 100vh;
-	width: 100vh;
-	
-	/* TODO: box-shadow */
-}
-/*
-#pokemon-list-container {
+
+.vy-1{
+	background-color: rgb(222, 222, 209);
 	border:rgb(44, 43, 43);
-	background-color: rgb(172, 156, 156);
 	margin: 1em 1em; 
-	position: relative;
-	padding: 0;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0.5;
-	transition: opacity .5s;
+	height: 100vh; 
 }
 
-#my-team-container {
-	background-color: beige;
+.vy-2-invisible{
+	display: none;
+	background-color: rgb(222, 222, 209);
 	border:rgb(44, 43, 43);
 	margin: 1em 1em; 
 	height: 100vh; 
