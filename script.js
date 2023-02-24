@@ -6,9 +6,14 @@ const firstPage = {
     championButton: document.querySelector('#champion-btn'),
     teamButton: document.querySelector('#team-btn')
 }
+
+
+
 const viewsOne = {
     pageOne: document.querySelector('.vy-1'),
     inputPokemon: document.querySelector('.search-pokemon'),
+    searchBtn: document.querySelector('.search-button')
+
 }
 const viewsTwo = {
     pageTwo: document.querySelector('.vy-2-invisible'),
@@ -54,26 +59,48 @@ async function renderUI() {
         let data = await response.json();
         let imgUrl = data.sprites.front_default;
 
-        pokemon.url = imgUrl;
-        let pokemonCard = document.createElement('article');
-        pokemonCard.innerHTML = `
+        let pokemonInfo = {
+            name: pokemon.name,
+            picture: imgUrl
+        }
+        let pokemonCard = document.createElement('article')
+        let pokemonImg = document.createElement('div')
+        pokemonImg.innerHTML = `<img src="${imgUrl}">`
+        let pokemonName = document.createElement('p')
+        pokemonName.innerHTML = `${pokemon.name}`
+        let pokemonButton = document.createElement('button')
+        pokemonButton.innerText = 'Lägg till!'
+        /*pokemonCard.innerHTML = `
+            <img src="${imgUrl}">
 			<p>${pokemon.name}</p>
-			<img src="${pokemon.url}">
-		`;
-        pokemonsContainerEl.appendChild(pokemonCard);
+            <button>${pokemon.button}
+		`;*/
+        pokemonList.push(pokemonInfo)
+        pokemonCard.classList = 'pokemon-card'
+
+        pokemonCard.append(pokemonImg);
+        pokemonCard.append(pokemonName);
+        pokemonCard.append(pokemonButton);
+        pokemonsContainerEl.append(pokemonCard);
     });
+
 };
 
 renderUI();
 
+let pokemonList = []
+console.log(pokemonList)
 
 
-// GetAPI(nameUrl)
-// .then(pokemons => {
-// 	pokemonNames.push(...pokemons)
-// }) 
-// .catch(error => {
-//     console.error(error)
-// })
+viewsOne.searchBtn.addEventListener('click', () => {
+    let searchString = viewsOne.inputPokemon.value; 
+    console.log(searchString)
 
-// let pokemonNames = []
+    if { searchString = pokemonList.value 
+        console.log()
+    
+    }
+
+
+
+})
