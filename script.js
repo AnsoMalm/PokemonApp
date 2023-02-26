@@ -5,8 +5,8 @@ const teamButton =  document.querySelector('#team-btn')
 let pageOne = document.querySelector('.vy-1')
 let pageTwo = document.querySelector('.vy-2-invisible')
 
-const pokemonContainer = document.querySelector('pokemon-container')
-const findPokemonInput = document.querySelector('.search-input-pokemon') 
+const pokemonContainer = document.querySelector('.pokemon-container')
+const findPokemonInput = document.querySelector('.search-pokemon') 
 const myTeam = document.querySelector('.my-team')
 
 
@@ -21,45 +21,18 @@ teamButton.addEventListener('click', () => {
 
 })
 
+const nameUrl = 'https://pokeapi.co/api/v2/pokemon?limit=10&offset=0'
 
 //Hämta data med namn och bild från pokemon API
-/*async function GetAPI(nameUrl) {
+async function GetAPI(nameUrl) {
     const response = await fetch(nameUrl)
     const data = await response.json()
     let dataResult = data.results;
     return dataResult;
-}*/
-
-const pokemonFetch = async() => {
-    const baseUrl = 'https://pokeapi.co/api/v2/pokemon?';
-    const pokemonList = []
-    const response = await fetch(baseUrl)
-    const data = await response.json()
-
-            const pokemon = {
-                name: data.name,
-                image: data.sprites['front_default'],
-            }
-            pokemonList.push(pokemon)
-
-            localStorage.setItem('pokemonList', JSON.stringify(pokemonList))
-        }
-
-    
-
-
-
-
-
-
-
-
-
+}
 
 async function renderUI() {
     let pokemons = await GetAPI(nameUrl);
-    let pokemonsContainerEl = document.querySelector('.pokemons-container');
-   
    
     pokemons.forEach(async pokemon => {
         let response = await fetch(pokemon.url);
@@ -69,21 +42,23 @@ async function renderUI() {
         let pokemonInfo = {
             name: pokemon.name,
             image: imgUrl
+
         }
-        
         let pokemonCard = document.createElement('article')
         let pokemonImg = document.createElement('div')
         pokemonImg.innerHTML = `<img src="${imgUrl}">`
         let pokemonName = document.createElement('p')
         pokemonName.innerHTML = `${pokemon.name}`
-       
-        pokemonList.push(pokemonInfo)
-        localStorage.setItem('pokemonList', JSON.stringify(pokemonList))
-        pokemonCard.classList = 'pokemon-card'
-
         pokemonCard.append(pokemonImg);
         pokemonCard.append(pokemonName);
-        pokemonsContainerEl.append(pokemonCard);
+        pokemonContainer.append(pokemonCard);
+        pokemonCard.classList = 'pokemon-card'
+
+        pokemonList.push(pokemonInfo)
+
+        //Spara datan till local storage 
+        localStorage.setItem('pokemonList', JSON.stringify(pokemonList))
+      
     });
 
 };
@@ -94,22 +69,23 @@ let pokemonList = []
 console.log(pokemonList)
 
 
-findPokemonInput.addEventListener('input', async () => {
+findPokemonInput.addEventListener('input', async() => {
     const searchString = findPokemonInput.value; 
     pokemonList = JSON.parse(localStorage.getItem('pokemonList'))
 
     const matchingPokemon = pokemonList.filter(pokemon => pokemon.name.includes(searchString))
-    
 
+    pokemonContainer.innerHTML = "",
+    
     matchingPokemon.forEach(pokemon => {
-        const pokemonArt = document.createElement('article')
-        pokemonArt.setAttribute('class', 'pokemoncard') 
-        pokemonArt.innerHTML =
-        `<img scr="${imgUrl}">
+        const pokemonDiv = document.createElement('div')
+        pokemonDiv.setAttribute('class', 'pokemoncard') 
+        pokemonDiv.innerHTML =
+        `<img scr="${pokemon.image}">
         <p>${pokemon.name}</p> 
         <button class="lägg-till-pokemon"> Lägg till Pokemon </button> `
 
-        pokemonContainer.append(pokemonArt)
+        pokemonContainer.append(pokemonDiv)
     })
 
 })
