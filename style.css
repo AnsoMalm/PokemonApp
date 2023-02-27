@@ -53,7 +53,7 @@ h3 {
 	margin: 1em; 
 }
 
-#champion-btn, #team-btn {
+#champion-btn, #team-btn, .pokemon-button {
 	padding: 0.7em; 
 	border-radius: 20px;
 	background-color: #E3350D;
@@ -80,12 +80,18 @@ h3 {
 	touch-action: manipulation;
 	white-space: nowrap;
   }
+
+
   
   #champion-btn:not([disabled]):focus {
 	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
   }
   
   #team-btn:not([disabled]):focus {
+	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  }
+
+  .pokemon-button:not([disabled]):focus {
 	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
   }
   
@@ -97,28 +103,63 @@ h3 {
 	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
 }
 
+.pokemon-button:not([disabled]):hover {
+	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  }
 
-#search-pokemon[type=text] {
-	width: 50%;
-	padding: 0.5em; 
+.pokemon-input {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+	text-align: center;
+	margin-top:2em;
+	height: 200px; 
+}
+#search-label {
+	margin-top: 1em; 
+	font-size: 20px;
+
+}
+
+
+.search-pokemon[type=text] {
+	width: 80%;
+	padding: 1em; 
 	border: none;
 	border-radius: 20px; 
 	margin-top: 3em; 
 }
 
 .vy-1{
-	background-color: rgb(222, 222, 209);
+	background-color: rgb(158, 158, 148);
 	border:rgb(44, 43, 43);
-	margin: 1em 1em; 
-	height: 100vh; 
+	height: 200vh; 
 }
 
 .vy-2-invisible{
 	display: none;
-	background-color: rgb(222, 222, 209);
-	border:rgb(44, 43, 43);
-	margin: 1em 1em; 
+	background-color: rgb(158, 158, 148);
+	border:rgb(232, 227, 227);
 	height: 100vh; 
 }
 
+.pokemon-container {
+	height: 200vh; 
+}
 
+.pokemon-container > article {
+	background-color:rgb(36, 24, 24);
+	margin: 1em;
+	height: 200px;  
+
+}
+.pokemon-name {
+	padding: 0.4em; 
+	font-size: 20px;
+}
+
+.img {
+	font-size: 50%;
+}
