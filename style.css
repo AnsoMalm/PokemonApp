@@ -1,3 +1,7 @@
+html {
+	height: 100%;
+}
+
 * {
 	box-sizing: border-box;
 	padding: 0; 
@@ -12,6 +16,7 @@ body {
 	background-color: rgb(44, 43, 43); 
 	font-family: 'Play', sans-serif;
 	color: rgb(173, 142, 42); 
+	min-height: 100%;
 }
 
 /*backgroundcolor på sidan  rgb(44, 43, 43);*/
@@ -29,7 +34,7 @@ main {
 	margin: 0.2em 1em;  
 	padding: 1em;
 	text-align: center;
-	height: 100vh;
+	height: auto;
 }
 
 h2 {
@@ -142,15 +147,11 @@ h3 {
 	display: none;
 	background-color: rgb(158, 158, 148);
 	border:rgb(232, 227, 227);
-	height: 100vh; 
 }
 
-.pokemon-container {
-	height: 200vh; 
-}
 
 .pokemon-container > article {
-	background-color:rgb(36, 24, 24);
+	background-color:rgb(165, 66, 66);
 	margin: 1em;
 	height: 200px;  
 
