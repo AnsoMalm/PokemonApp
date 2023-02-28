@@ -35,23 +35,30 @@ async function GetAPI(nameUrl) {
 
 //funktionen för att rendera pokemon på sidan
 async function renderUI() {
-    let pokemons = await GetAPI(nameUrl);
+    try {
+        let pokemons = await GetAPI(nameUrl);
 
-    //loopa genom varje pokemon och hämta data från dess url 
-    pokemons.forEach(async pokemon => {
-        let response = await fetch(pokemon.url);
-        let data = await response.json();
+        //loopa genom varje pokemon och hämta data från dess url 
+        pokemons.forEach(async pokemon => {
+            let response = await fetch(pokemon.url);
+            let data = await response.json();
+    
+            //Lagra namn och bild för varje pokemon i pokemonList-arrayen 
+            const pokemonInfo = {
+                name: data.name,
+                image: data.sprites.front_default
+    
+            }
+            pokemonList.push(pokemonInfo)
+    
+        });
+        console.log(pokemonList)
 
-        //Lagra namn och bild för varje pokemon i pokemonList-arrayen 
-        const pokemonInfo = {
-            name: data.name,
-            image: data.sprites.front_default
+    } catch (error) {
 
-        }
-        pokemonList.push(pokemonInfo)
 
-    });
-    console.log(pokemonList)
+    }
+ 
 };
 //kalla på funktionen för att rendera pokemon på sidan 
 
