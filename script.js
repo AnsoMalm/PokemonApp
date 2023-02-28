@@ -116,12 +116,13 @@ function renderMyTeam() {
         let pokemonName = document.createElement('p');
         pokemonName.innerHTML = `${pokemon.name}`;
 
+        let pokemonNickName = document.createElement('p')
         let pokemonImg = document.createElement('div');
         pokemonImg.innerHTML = `<img src="${pokemon.image}">`;
 
         let nameInput = document.createElement('input')
-        nameInput.setAttribute('type', 'text'); 
         nameInput.placeholder = 'Skriv in namn på pokemon';
+        nameInput.maxLength = 10;
 
         let removeButton = document.createElement('button');
         removeButton.innerText = 'Kicka från laget';
@@ -132,8 +133,24 @@ function renderMyTeam() {
         nameInput.classList = 'name-input'; 
         removeButton.classList = 'remove-button';
       
-        pokemonCard.append(pokemonName, pokemonImg, nameInput, removeButton);
+        pokemonCard.append(pokemonName, pokemonNickName, pokemonImg, nameInput, removeButton,);
         myPokemonContainer.append(pokemonCard);
+
+        removeButton.addEventListener('click', () => {
+            reserveList.push(pokemon);
+            myPokemonTeam.splice(myPokemonTeam.indexOf(pokemon), 1);
+            renderMyTeam();
+            renderReserveList();
+        })
+
+        nameInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                let inputNickname = nameInput.value 
+                pokemonNickName.innerText = inputNickname
+                nameInput.value = '';
+            }
+        })
+
     }); 
 }
 
@@ -164,6 +181,20 @@ function renderReserveList() {
 
         pokemonCard.append(pokemonName, pokemonImg, addButton, removeButton);
         reserveListContainer.append(pokemonCard);
+
+        addButton.addEventListener('click', () => {
+            if (myPokemonTeam.length < 3) {
+                myPokemonTeam.push(pokemon);
+                reserveList.splice(reserveList.indexOf(pokemon), 1);
+                renderMyTeam();
+                renderReserveList();
+            }
+         
+        })
+        removeButton.addEventListener('click', () => {
+            reserveList.splice(reserveList.indexOf(pokemon), 1)
+            pokemonCard.remove();
+        })
   
     })
 }
@@ -171,21 +202,11 @@ function renderReserveList() {
 
 
 
-//PRIO 1
-//fixa html css så att sidan är större än vad den är 
 
 //text som påminner användare om att man har för få i sitt lag. 
 
-//RenderMyteam 
-//Fixa; 
-//Input => pushar ut namnet i en <p>-tagg
-//removebutton => ta bort pokemon från listan 
 
-
-//renderRerserveList 
-//fixa; 
-//addbutton => Lägga till en pokemon till myTEAM 
-//removebutton => ta bort en reserv från listan  
+//säkerhet try och catch. 
 
 //lägga in alla bilder på API med  1279 st  
 
