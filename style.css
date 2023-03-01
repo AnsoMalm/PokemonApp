@@ -15,7 +15,7 @@ body {
 	align-items: center;
 	background-color: rgb(44, 43, 43); 
 	font-family: 'Play', sans-serif;
-	color: rgb(173, 142, 42); 
+	color: rgb(183, 145, 20); 
 	min-height: 100%;
 }
 
@@ -147,7 +147,38 @@ h3 {
 	background-color: rgb(158, 158, 148);
 	border:rgb(232, 227, 227);
 }
+/*
+.pokemon-message-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center; 
+	width: 70%; 
+	height: 70%;
+	margin-left: 4em; 
+	
+}
 
+.pokemon-message-container > .add-pokemon-to-team {
+	color: black;
+	background-color: #c6d137;
+	padding: 1.2em; 
+	border-radius: 1em;
+	text-align: center;
+	position: fixed;
+	top: 50%;
+	bottom: 50%; 
+
+}
+
+.pokemon-message-container > .add-pokemon-to-reserve {
+	color: black;
+	background-color: red;
+	padding: 1.2em; 
+	border-radius: 1em;
+	text-align: center;
+}
+*/
 
 .pokemon-container > article {
 	background-color:rgb(165, 66, 66);

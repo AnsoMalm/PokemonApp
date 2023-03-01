@@ -35,7 +35,6 @@ async function GetAPI(nameUrl) {
 
 //funktionen för att rendera pokemon på sidan
 async function renderUI() {
-    try {
         let pokemons = await GetAPI(nameUrl);
 
         //loopa genom varje pokemon och hämta data från dess url 
@@ -54,12 +53,9 @@ async function renderUI() {
         });
         console.log(pokemonList)
 
-    } catch (error) {
-
 
     }
  
-};
 //kalla på funktionen för att rendera pokemon på sidan 
 
 renderUI();
@@ -81,7 +77,7 @@ findPokemonInput.addEventListener('keyup', async() => {
 
         let pokemonImg = document.createElement('div');
         pokemonImg.innerHTML = `<img src="${pokemon.image}">`;
-        
+
         let pokemonButton = document.createElement('button');
         pokemonButton.innerText = 'Lägg till pokemon';
 
@@ -93,26 +89,56 @@ findPokemonInput.addEventListener('keyup', async() => {
         pokemonCard.append(pokemonName, pokemonImg, pokemonButton);
         pokemonContainer.append(pokemonCard);
 
-        //lägg till eventlistner för att lägga till pokemon i MypokemonTeam 
+        //lägg till eventlistner för att lägga till pokemon i MypokemonTeam samt lägga till text som meddelande till användaren
         pokemonButton.addEventListener('click', () => {
+              console.log(pokemonButton)
             if (myPokemonTeam.length < 3) {
-                myPokemonTeam.push(pokemon); 
+                addMessageToMyTeam(pokemonButton);
+                myPokemonTeam.push(pokemon);
+
             } else {
-                reserveList.push(pokemon)
+                addedMessageToMyReserve(pokemonButton);
+                reserveList.push(pokemon);
+                
             }
             renderMyTeam();
             renderReserveList();
+
         })
 
     });
 })
 
+//funktion som lägger till text att man har lagt till en pokemon till sitt team 
 
+function addMessageToMyTeam (pokemonButton) {
+    const message = document.createElement('div');
+    message.classList.add('message');
+    message.innerText = 'Du har lagt till en pokemon i ditt lag'
+    pokemonButton.insertAdjacentElement('afterend', message)
+
+    setTimeout(() => {
+        message.remove();
+    },2000)
+
+}
+
+//funktion som lägger till text att som säger att laget är fullt och att den läggs in i reserv laget. 
+function addedMessageToMyReserve(pokemonButton) {
+    const reserveMessage = document.createElement('div');
+    reserveMessage.classList.add('reservemessage');
+    reserveMessage.innerText = 'Du har nu fullt lag - din pokemon läggs in i reserven'
+    pokemonButton.insertAdjacentElement('afterend', reserveMessage);
+
+    setTimeout(() => {
+        reserveMessage.remove(); 
+    },2000)
+}
 
 let myPokemonTeam = [];
 let reserveList = []; 
 
-
+//Funktion som skapar MyTeam 
 function renderMyTeam() {
     const myPokemonContainer = document.querySelector('.my-team-pokemon-container')
     myPokemonContainer.innerHTML = '';
@@ -142,14 +168,14 @@ function renderMyTeam() {
       
         pokemonCard.append(pokemonName, pokemonNickName, pokemonImg, nameInput, removeButton,);
         myPokemonContainer.append(pokemonCard);
-
+        //Knapp som tar bort pokemon från MyTeam och skickar den ner till Reserv-listan 
         removeButton.addEventListener('click', () => {
             reserveList.push(pokemon);
             myPokemonTeam.splice(myPokemonTeam.indexOf(pokemon), 1);
             renderMyTeam();
             renderReserveList();
         })
-
+        //Namn input för pokemon. 
         nameInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 let inputNickname = nameInput.value 
@@ -160,7 +186,7 @@ function renderMyTeam() {
 
     }); 
 }
-
+//funktion som skapar reserv-listan 
 function renderReserveList() {
     const reserveListContainer = document.querySelector('.my-reserve-list-container')
     reserveListContainer.innerHTML = "";
@@ -188,7 +214,7 @@ function renderReserveList() {
 
         pokemonCard.append(pokemonName, pokemonImg, addButton, removeButton);
         reserveListContainer.append(pokemonCard);
-
+        //Knapp som lägger till i MyTeam 
         addButton.addEventListener('click', () => {
             if (myPokemonTeam.length < 3) {
                 myPokemonTeam.push(pokemon);
@@ -198,6 +224,7 @@ function renderReserveList() {
             }
          
         })
+        //Knapp som tar bort från reservlistan helt o hållet. 
         removeButton.addEventListener('click', () => {
             reserveList.splice(reserveList.indexOf(pokemon), 1)
             pokemonCard.remove();
@@ -210,10 +237,9 @@ function renderReserveList() {
 
 
 
-//text som påminner användare om att man har för få i sitt lag. 
-
-
 //säkerhet try och catch. 
+
+//fixa koden så att dem ligger i olika kataloger. 
 
 //lägga in alla bilder på API med  1279 st  
 
@@ -221,3 +247,13 @@ function renderReserveList() {
 //PRIO 2
 //fixa alll css på sidan så den är snygg
 //fixa responsiviteten på sidan från smal till större skärm 
+
+//Göra codereview 
+//göra 2 tester 
+
+
+//Sista prio 4
+//Lägga över i main (när allt är färdigt)
+//lägga upp det på en sida, antingen surge.sh eller github.page 
+//fixa rapporten 
+
