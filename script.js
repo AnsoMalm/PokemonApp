@@ -94,7 +94,7 @@ findPokemonInput.addEventListener('keyup', async() => {
               console.log(pokemonButton)
             if (myPokemonTeam.length < 3) {
                 addMessageToMyTeam(pokemonButton);
-                myPokemonTeam.push(pokemon);
+                myPokemonTeam.push({ ...pokemon });
 
             } else {
                 addedMessageToMyReserve(pokemonButton);
@@ -168,6 +168,21 @@ function renderMyTeam() {
       
         pokemonCard.append(pokemonName, pokemonNickName, pokemonImg, nameInput, removeButton,);
         myPokemonContainer.append(pokemonCard);
+        
+        // om det finns ett nickname sedan tidigare
+        if( pokemon.nickname ) {
+            // skriv in det i p-taggen
+            pokemonNickName.innerText = pokemon.nickname
+        }
+        //Namn input för pokemon. 
+        nameInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                let inputNickname = nameInput.value 
+                pokemon.nickname = nameInput.value
+                pokemonNickName.innerText = inputNickname
+                nameInput.value = '';
+            }
+        })
         //Knapp som tar bort pokemon från MyTeam och skickar den ner till Reserv-listan 
         removeButton.addEventListener('click', () => {
             reserveList.push(pokemon);
@@ -175,15 +190,6 @@ function renderMyTeam() {
             renderMyTeam();
             renderReserveList();
         })
-        //Namn input för pokemon. 
-        nameInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                let inputNickname = nameInput.value 
-                pokemonNickName.innerText = inputNickname
-                nameInput.value = '';
-            }
-        })
-
     }); 
 }
 //funktion som skapar reserv-listan 
@@ -217,7 +223,7 @@ function renderReserveList() {
         //Knapp som lägger till i MyTeam 
         addButton.addEventListener('click', () => {
             if (myPokemonTeam.length < 3) {
-                myPokemonTeam.push(pokemon);
+                myPokemonTeam.push({ ...pokemon });
                 reserveList.splice(reserveList.indexOf(pokemon), 1);
                 renderMyTeam();
                 renderReserveList();
