@@ -6,6 +6,7 @@ let pageOne = document.querySelector('.vy-1')
 let pageTwo = document.querySelector('.vy-2-invisible')
 const pokemonContainer = document.querySelector('.pokemon-container')
 const findPokemonInput = document.querySelector('.search-pokemon') 
+const pokemonTeamDivH4Container = document.querySelector("#pokemon-team-div-h4-container")  
 
 //funktion för att byta till champion-vyn
 championButton.addEventListener('click', () => {
@@ -18,12 +19,27 @@ teamButton.addEventListener('click', () => {
     pageTwo.style.display = 'block'
 })
 
+const pokemonTeamH4 = document.createElement('h4');
+pokemonTeamH4.innerText = 'Här fyller du på ditt lag! Du ska ha 3 lagmedlemmar!'
+const pokemonTeamH4FullTeam = document.createElement('h4')
+pokemonTeamH4FullTeam.innerText = 'Grattis, nu har du fyllt ditt lag!'
+
+pokemonTeamDivH4Container.append(pokemonTeamH4FullTeam);
+pokemonTeamDivH4Container.append(pokemonTeamH4)
+    pokemonTeamH4FullTeam.style.display = 'none'
+    pokemonTeamH4.style.display = 'block'
+
+
 //Url till API:et som ska användas 
 const nameUrl = 'https://pokeapi.co/api/v2/pokemon?limit=10&offset=0'
 
 
 //array för att lägra pokemons-inforamtionen
 let pokemonList = [];
+
+//Här hamnar valda pokemons 
+let myPokemonTeam = [];
+let reserveList = []; 
 
 //Hämta data från pokemon API
 async function GetAPI(nameUrl) {
@@ -103,11 +119,25 @@ findPokemonInput.addEventListener('keyup', async() => {
             }
             renderMyTeam();
             renderReserveList();
+            showPokemonTeamStatus();
 
         })
 
     });
 })
+
+//Visar lagets status i myPokemonTeam, ifall du kan fylla på mer i laget eller inte
+
+function showPokemonTeamStatus () {
+    if (myPokemonTeam.length < 3 ) {
+        pokemonTeamH4.style.display = 'block'
+        pokemonTeamH4FullTeam.style.display = 'none'
+    }
+    else {
+        pokemonTeamH4FullTeam.style.display = 'block'
+        pokemonTeamH4.style.display = 'none'
+    }
+} 
 
 //funktion som lägger till text att man har lagt till en pokemon till sitt team 
 
@@ -135,8 +165,6 @@ function addedMessageToMyReserve(pokemonButton) {
     },2000)
 }
 
-let myPokemonTeam = [];
-let reserveList = []; 
 
 //Funktion som skapar MyTeam 
 function renderMyTeam() {
@@ -183,12 +211,13 @@ function renderMyTeam() {
                 nameInput.value = '';
             }
         })
-        //Knapp som tar bort pokemon från MyTeam och skickar den ner till Reserv-listan 
+        //Knapp som tar bort pokemon från MyTeam och skickar den ner till Reserv-laget 
         removeButton.addEventListener('click', () => {
             reserveList.push(pokemon);
             myPokemonTeam.splice(myPokemonTeam.indexOf(pokemon), 1);
             renderMyTeam();
             renderReserveList();
+            showPokemonTeamStatus();
         })
     }); 
 }
@@ -227,6 +256,7 @@ function renderReserveList() {
                 reserveList.splice(reserveList.indexOf(pokemon), 1);
                 renderMyTeam();
                 renderReserveList();
+                showPokemonTeamStatus();
             }
          
         })
@@ -234,6 +264,7 @@ function renderReserveList() {
         removeButton.addEventListener('click', () => {
             reserveList.splice(reserveList.indexOf(pokemon), 1)
             pokemonCard.remove();
+            showPokemonTeamStatus();
         })
   
     })
