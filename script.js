@@ -192,6 +192,7 @@ function renderMyTeam() {
         
         let pokemonName = document.createElement('p');
         pokemonName.innerHTML = `${pokemon.name}`;
+
         let pokemonNickName = document.createElement('p')
         let pokemonImg = document.createElement('div');
         pokemonImg.innerHTML = `<img src="${pokemon.image}">`;
@@ -228,7 +229,7 @@ function renderMyTeam() {
         })
         //Knapp som tar bort pokemon från MyTeam och skickar den ner till Reserv-laget 
         removeButton.addEventListener('click', () => {
-            reserveList.push({...pokemon});
+            reserveList.push(pokemon);
             myPokemonTeam.splice(myPokemonTeam.indexOf(pokemon), 1);
             renderMyTeam();
             renderReserveList();
@@ -264,7 +265,7 @@ function renderReserveList() {
         addButton.classList = 'add-button'; 
         removeButton.classList = 'remove-button';
 
-        pokemonCard.append(pokemonName, pokemonImg, addButton, removeButton);
+        pokemonCard.append(pokemonName, pokemonNickName, pokemonImg, addButton, removeButton);
         reserveListContainer.append(pokemonCard);
 
          // om det finns ett nickname sedan tidigare
@@ -276,7 +277,7 @@ function renderReserveList() {
         addButton.addEventListener('click', () => {
             if (myPokemonTeam.length < 3) {
                 myPokemonTeam.push({ ...pokemon });
-                reserveList.splice(reserveList.indexOf({...pokemon}), 1); //
+                reserveList.splice(reserveList.indexOf(pokemon), 1);
                 renderMyTeam();
                 renderReserveList();
                 showPokemonTeamStatus();
@@ -285,7 +286,7 @@ function renderReserveList() {
         })
         //Knapp som tar bort från reservlistan helt o hållet. 
         removeButton.addEventListener('click', () => {
-            reserveList.splice(reserveList.indexOf(pokemon), 1) //
+            reserveList.splice(reserveList.indexOf(pokemon), 1)
             pokemonCard.remove();
             showPokemonTeamStatus();
         })
@@ -297,19 +298,16 @@ function renderReserveList() {
 
 
 
-//säkerhet try och catch. 
-
 //fixa koden så att dem ligger i olika kataloger. 
 
-//lägga in alla bilder på API med  1279 st  
 
 
 //PRIO 2
 //fixa alll css på sidan så den är snygg
 //fixa responsiviteten på sidan från smal till större skärm 
 
-//Göra codereview 
-//göra 2 tester 
+//Göra codereview  CHECK!
+//göra 2 tester CHECK 1 - 1 test kvar!
 
 
 //Sista prio 4
