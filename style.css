@@ -13,10 +13,11 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	background-color: rgb(169, 163, 163); 
-	font-family: 'Play', sans-serif;
-	color: rgb(255,214,4); 
+	font-family: 'Play', sans-serif; 
 	min-height: 100%;
+	color:rgb(161, 46, 46);
 }
 
 /*backgroundcolor på sidan  rgb(44, 43, 43);*/
@@ -47,14 +48,20 @@ h3 {
 	margin-top: 1em;
 	padding: 0.3em; 
 }
+h4 {
+	margin-bottom: 2em; 
+}
 
-/*#upper-text-container {
-	background-color: rgb(84, 76, 76);
-	padding: 1em; 
-	margin: 0.3em 0.3em; 
-}*/
+.vy-1{
+	background-color: rgb(158, 150, 150);
+}
 
+.vy-2-invisible{
+	display: none;
+	background-color: rgb(158, 150, 150);
+}
 
+/* vy-1 börjar här*/
 #champion-btn, #team-btn, .pokemon-button {
 	padding: 1em; 
 	border-radius: 20px;
@@ -94,7 +101,26 @@ h3 {
 .pokemon-button:not([disabled]):hover {
 	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
 }
+/*När man trycker på knappen för att lägga till pokemon får man upp ett meddelande*/
 
+.message-container {
+	color: black; 
+	padding: 5em; 
+	height: 50px; 
+	width: 5px; 
+}
+
+.message, .reservemessage {
+	width: 100%; 
+	background-color: #d46332;
+	height: 1.6em;
+	font-size: 20px;
+	border-radius: 0.9em;
+	color: white;
+}
+
+
+/*Sökinputfältet för att hitta pokemon*/
 .pokemon-input {
 	display: flex;
 	flex-direction: column;
@@ -110,7 +136,9 @@ h3 {
 	font-size: 20px;
 
 }
-
+.search-pokemon {
+	max-width: 300px;
+}
 
 .search-pokemon[type=text] {
 	width: 80%;
@@ -121,40 +149,156 @@ h3 {
 }
 
 
-.vy-1{
-	background-color: rgb(158, 150, 150);
-	border:rgb(44, 43, 43);
-}
-
-.vy-2-invisible{
-	display: none;
-	background-color: rgb(158, 150, 150);
-	border:rgb(232, 227, 227);
-}
-
+/*Pokemon cards */
 .pokemon-container {
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .pokemon-container > .pokemon-card {
 	background-color:rgb(239, 236, 236);
-	margin: 1.3em;
+	margin: 1em;
 	padding: 0.5em; 
-	height: 220px;  
+	height: 270px;  
 	border-radius: 0.4em;
 	box-shadow: 0 4px 8px 0 rgba(40, 39, 39, 0.2), 0 6px 20px 0 rgba(41, 41, 41, 0.19);
+	min-width: 250px; 
 
 }
-.pokemon-card:hover {
-	
 
-}
 .pokemon-name {
 	margin-top: 0.3em; 
 	padding: 0.4em; 
-	font-size: 20px;
+	font-size: 25px;
+}
+ p {
+	font-size:20px;
 }
 
 .pokemon-img {
+	margin: 0.3em; 
 	font-size: 100%;
+}
+
+
+/*Här börjar vy-2*/
+
+/*My team längst upp på sidan*/
+
+/*.my-team {
+*/
+
+.pokemon-team-div-h4-container {
+	padding: 0.3em; 
+	margin: 2em; 
+
+}
+
+.my-team-pokemon-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+
+}
+
+.my-team-pokemon-container > .my-pokemon-card {
+	background-color:rgb(239, 236, 236);
+	margin: 1em;
+	padding: 0.3em; 
+	height: 320px;  
+	border-radius: 0.4em;
+	box-shadow: 0 4px 8px 0 rgba(40, 39, 39, 0.2), 0 6px 20px 0 rgba(41, 41, 41, 0.19);
+	max-width: 230px; 
+}
+
+.my-pokemon-card {
+
+}
+
+.name-input {
+	margin-top: 1em;
+	padding: 0.4em; 
+	border: 2px solid grey;
+	border-radius: 2em;
+}
+
+
+.remove-button {
+	margin: 1em;
+	background-color: rgb(222, 203, 80);
+	padding: 1em; 
+	border-radius: 2em;
+	border: 1px solid rgb(174, 158, 53);
+	font-weight: bold;
+	font-size: 1rem;
+	color: rgb(93, 79, 10)
+
+}
+.remove-button:hover {
+	background-color: #ca5928;
+	color: white;
+
+}
+
+/*My reservteam - längre ner på sidan*/
+
+.my-reserve {
+
+}
+
+.my-reserve-list-container > .reserve-pokemon-card {
+	background-color:rgb(239, 236, 236);
+	margin: 1.3em;
+	padding: 1em; 
+	height: 320px;  
+	border-radius: 0.4em;
+	box-shadow: 0 4px 8px 0 rgba(40, 39, 39, 0.2), 0 6px 20px 0 rgba(41, 41, 41, 0.19);
+}
+.reserve-pokemon-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1em; 
+}
+
+
+.add-button {
+	background-color: #d18828;
+	padding: 1em; 
+	font-size: 1rem; 
+	border: 1px solid #bf781b;
+	border-radius: 2em;
+	font-weight: bold;
+	color: rgb(93, 79, 10)
+
+}
+
+.add-button:hover {
+	background-color: #76c41d;
+	color: white; 
+}
+
+@media screen and (min-width: 600px) {
+
+	.pokemon-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.search-pokemon {
+		max-width: 400px;  
+	}
+
+	.my-team-pokemon-container, .my-reserve-list-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: wrap; 
+	}
 }
