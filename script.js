@@ -20,9 +20,9 @@ teamButton.addEventListener('click', () => {
 })
 
 const pokemonTeamH4 = document.createElement('h4');
-pokemonTeamH4.innerText = 'Här fyller du på ditt lag! Du ska ha 3 lagmedlemmar!'
+pokemonTeamH4.innerText = 'Here you fill in your teamchampions! You must have 3 team members!'
 const pokemonTeamH4FullTeam = document.createElement('h4')
-pokemonTeamH4FullTeam.innerText = 'Grattis, nu har du fyllt ditt lag!'
+pokemonTeamH4FullTeam.innerText = 'Congratulations! You have now filled your team! Now you are ready to play!'
 
 pokemonTeamDivH4Container.append(pokemonTeamH4FullTeam);
 pokemonTeamDivH4Container.append(pokemonTeamH4)
@@ -90,7 +90,7 @@ renderUI();
 //funktionen som körs när använder skriver i sökfältet
 findPokemonInput.addEventListener('keyup', async() => {
     const searchString = findPokemonInput.value;
-    if (findPokemonInput.value.length > 2) {
+    if (findPokemonInput.value.length > 1) {
         const matchingPokemon = pokemonList.filter(pokemon => pokemon.name.includes(searchString))
 
         //rensar container innan ny pokemon läggs till. 
@@ -107,7 +107,7 @@ findPokemonInput.addEventListener('keyup', async() => {
             pokemonImg.innerHTML = `<img src="${pokemon.image}">`;
     
             let pokemonButton = document.createElement('button');
-            pokemonButton.innerText = 'Lägg till pokemon';
+            pokemonButton.innerText = 'Add Pokèmon';
     
             pokemonCard.classList ='pokemon-card';
             pokemonName.classList = 'pokemon-name';
@@ -161,7 +161,7 @@ function addMessageToMyTeam (pokemonButton) {
     messageContainer.classList = ('message-container')
     const message = document.createElement('p');
     message.classList.add('message');
-    message.innerText = 'Lagt till i ditt lag'
+    message.innerText = 'Added to my team'
     pokemonButton.insertAdjacentElement('afterend', message)
     setTimeout(() => {
         message.remove();
@@ -173,7 +173,7 @@ function addMessageToMyTeam (pokemonButton) {
 function addedMessageToMyReserve(pokemonButton) {
     const reserveMessage = document.createElement('div');
     reserveMessage.classList.add('reservemessage');
-    reserveMessage.innerText = 'Tillagd i reserv'
+    reserveMessage.innerText = 'Added to the reservteam'
     pokemonButton.insertAdjacentElement('afterend', reserveMessage);
 
     setTimeout(() => {
@@ -198,11 +198,11 @@ function renderMyTeam() {
         pokemonImg.innerHTML = `<img src="${pokemon.image}">`;
 
         let nameInput = document.createElement('input')
-        nameInput.placeholder = 'Ge ett smeknamn...';
+        nameInput.placeholder = 'Giv me a nickname...';
         nameInput.maxLength = 10;
 
         let removeButton = document.createElement('button');
-        removeButton.innerText = 'Kicka från laget';
+        removeButton.innerText = 'Kick from team';
 
         pokemonCard.classList = 'my-pokemon-card';
         pokemonName.classList = 'pokemon-name'; 
@@ -254,10 +254,10 @@ function renderReserveList() {
         pokemonImg.innerHTML = `<img src="${pokemon.image}">`;
 
         let addButton = document.createElement('button');
-        addButton.innerText = 'Lägg till i laget';
+        addButton.innerText = 'Add to my team';
 
         let removeButton = document.createElement('button')
-        removeButton.innerText = 'Ta bort'
+        removeButton.innerText = 'Remove'
 
         pokemonCard.classList = 'reserve-pokemon-card';
         pokemonName.classList = 'pokemon-name';

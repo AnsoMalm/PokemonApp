@@ -13,21 +13,22 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	background-color: rgb(169, 163, 163); 
+	background-color: rgb(43, 39, 39); 
 	font-family: 'Play', sans-serif; 
 	min-height: 100%;
 	color:rgb(161, 46, 46);
 }
+
+/*background-color rgb(169, 163, 163); */
 
 /*backgroundcolor på sidan  rgb(44, 43, 43);*/
 
 header {
 	font-family: 'Carter One', cursive;
 	color: rgb(255,214,4);
-	margin: 0.3em 3em; 
+	margin: 3em 0.3em 0.3em 0.3em; 
 	text-shadow: 1px 1px 2px rgb(201, 31, 31), 0 0 1em rgb(77, 142, 71), 0 0 0.2em rgb(157, 248, 124);
-	font-size: 23px;
+	font-size: 27px;
 	text-align: center;
 }
 
@@ -36,29 +37,29 @@ main {
 	padding: 1em;
 	width: 100%;
 	text-align: center;
-	height: auto;
+	height: auto; 
 }
-
-h2 {
-	font-size: 30px;
-	margin: 0.2em; 
+h3, h4 {
+	color: rgb(255,214,4);
 }
 h3 {
-	font-size: 40px;
+	font-size: 50px;
 	margin-top: 1em;
 	padding: 0.3em; 
 }
 h4 {
+	font-size: 25px;
+	margin-top: 1em; 
 	margin-bottom: 2em; 
 }
 
 .vy-1{
-	background-color: rgb(158, 150, 150);
+	background-color: rgb(79, 68, 68);
 }
 
 .vy-2-invisible{
 	display: none;
-	background-color: rgb(158, 150, 150);
+	background-color: rgb(79, 68, 68);
 }
 
 /* vy-1 börjar här*/
@@ -71,16 +72,16 @@ h4 {
 	margin: 0.7em 0.3em;
 	background: linear-gradient(to bottom right, #d12847, #f4ff5a);
 	border: 0;
-	border-radius: 12px;
+	border-radius: 20px;
 	color: #FFFFFF;
 	cursor: pointer;
 	display: inline-block;
 	font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 500;
 	line-height: 2.5;
 	outline: transparent;
-	padding: 0 1rem;
+	padding: 0.4rem 1rem;
 	text-align: center;
 	text-decoration: none;
 	transition: box-shadow .2s ease-in-out;
@@ -126,14 +127,13 @@ h4 {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color:rgb(158, 150, 150);
+	background-color:rgb(43, 39, 39);
 	text-align: center;
-	margin-top:2em;
 	height: 200px; 
 }
 #search-label {
-	margin-top: 0.3em; 
 	font-size: 20px;
+	color: rgb(255,214,4);
 
 }
 .search-pokemon {
@@ -151,6 +151,7 @@ h4 {
 
 /*Pokemon cards */
 .pokemon-container {
+	margin-top: 2em; 
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -178,7 +179,6 @@ h4 {
 }
 
 .pokemon-img {
-	margin: 0.3em; 
 	font-size: 100%;
 }
 
@@ -186,9 +186,6 @@ h4 {
 /*Här börjar vy-2*/
 
 /*My team längst upp på sidan*/
-
-/*.my-team {
-*/
 
 .pokemon-team-div-h4-container {
 	padding: 0.3em; 
@@ -204,23 +201,18 @@ h4 {
 
 
 }
-
 .my-team-pokemon-container > .my-pokemon-card {
 	background-color:rgb(239, 236, 236);
 	margin: 1em;
 	padding: 0.3em; 
-	height: 320px;  
+	height: 325px;  
 	border-radius: 0.4em;
 	box-shadow: 0 4px 8px 0 rgba(40, 39, 39, 0.2), 0 6px 20px 0 rgba(41, 41, 41, 0.19);
 	max-width: 230px; 
 }
 
-.my-pokemon-card {
-
-}
-
 .name-input {
-	margin-top: 1em;
+	margin: 0.3em 0.3em;
 	padding: 0.4em; 
 	border: 2px solid grey;
 	border-radius: 2em;
@@ -228,41 +220,43 @@ h4 {
 
 
 .remove-button {
-	margin: 1em;
-	background-color: rgb(222, 203, 80);
+	margin: 0.3em;
+	background-color: rgb(223, 198, 33);
 	padding: 1em; 
 	border-radius: 2em;
 	border: 1px solid rgb(174, 158, 53);
 	font-weight: bold;
 	font-size: 1rem;
-	color: rgb(93, 79, 10)
+	color: white;
 
 }
 .remove-button:hover {
 	background-color: #ca5928;
-	color: white;
+	color: black;
 
 }
 
 /*My reservteam - längre ner på sidan*/
 
-.my-reserve {
-
-}
-
-.my-reserve-list-container > .reserve-pokemon-card {
-	background-color:rgb(239, 236, 236);
-	margin: 1.3em;
-	padding: 1em; 
-	height: 320px;  
-	border-radius: 0.4em;
-	box-shadow: 0 4px 8px 0 rgba(40, 39, 39, 0.2), 0 6px 20px 0 rgba(41, 41, 41, 0.19);
-}
-.reserve-pokemon-card {
+.my-reserve-list-container {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 1em; 
+}
+
+
+.my-reserve-list-container > .reserve-pokemon-card {
+	background-color:rgb(239, 236, 236);
+	margin: 1em;
+	padding: 0.3em; 
+	height: 325px;  
+	border-radius: 0.4em;
+	box-shadow: 0 4px 8px 0 rgba(40, 39, 39, 0.2), 0 6px 20px 0 rgba(41, 41, 41, 0.19);
+	max-width: 230px;
+}
+.img {
+	width: 100%;
 }
 
 
@@ -270,19 +264,27 @@ h4 {
 	background-color: #d18828;
 	padding: 1em; 
 	font-size: 1rem; 
-	border: 1px solid #bf781b;
+	border: 1px solid #ae895a;
 	border-radius: 2em;
 	font-weight: bold;
-	color: rgb(93, 79, 10)
+	color: white;
 
 }
 
 .add-button:hover {
-	background-color: #76c41d;
-	color: white; 
+	background-color: #96c625;
+	color: black;
 }
 
 @media screen and (min-width: 600px) {
+
+	#search-label {
+		font-size: 25px;
+	}
+
+	.search-pokemon {
+		max-width: 400px;  
+	}
 
 	.pokemon-container {
 		display: flex;
@@ -291,14 +293,13 @@ h4 {
 		flex-wrap: wrap;
 	}
 
-	.search-pokemon {
-		max-width: 400px;  
-	}
-
 	.my-team-pokemon-container, .my-reserve-list-container {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 		flex-wrap: wrap; 
+	}
+	.my-reserve-list-container {
+
 	}
 }
