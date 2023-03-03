@@ -19,9 +19,7 @@ body {
 	color:rgb(161, 46, 46);
 }
 
-/*background-color rgb(169, 163, 163); */
 
-/*backgroundcolor på sidan  rgb(44, 43, 43);*/
 
 header {
 	font-family: 'Carter One', cursive;
@@ -63,6 +61,7 @@ h4 {
 }
 
 /* vy-1 börjar här*/
+/*
 #champion-btn, #team-btn, .pokemon-button {
 	padding: 1em; 
 	border-radius: 20px;
@@ -101,9 +100,9 @@ h4 {
 
 .pokemon-button:not([disabled]):hover {
 	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
-}
-/*När man trycker på knappen för att lägga till pokemon får man upp ett meddelande*/
+}*/
 
+/*När man trycker på knappen för att lägga till pokemon får man upp ett meddelande*/
 .message-container {
 	color: black; 
 	padding: 5em; 
@@ -149,7 +148,7 @@ h4 {
 }
 
 
-/*Pokemon cards */
+/*Pokemon cards från första sidan*/
 .pokemon-container {
 	margin-top: 2em; 
 	width: 100%;
@@ -218,7 +217,7 @@ h4 {
 	border-radius: 2em;
 }
 
-
+/*
 .remove-button {
 	margin: 0.3em;
 	background-color: rgb(223, 198, 33);
@@ -235,7 +234,7 @@ h4 {
 	color: black;
 
 }
-
+*/
 /*My reservteam - längre ner på sidan*/
 
 .my-reserve-list-container {
@@ -259,7 +258,7 @@ h4 {
 	width: 100%;
 }
 
-
+/*
 .add-button {
 	background-color: #d18828;
 	padding: 1em; 
@@ -275,6 +274,9 @@ h4 {
 	background-color: #96c625;
 	color: black;
 }
+*/
+
+/*för större skärm*/
 
 @media screen and (min-width: 600px) {
 
@@ -299,7 +301,5 @@ h4 {
 		justify-content: center;
 		flex-wrap: wrap; 
 	}
-	.my-reserve-list-container {
 
-	}
 }
