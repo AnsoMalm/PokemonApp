@@ -27,7 +27,6 @@ pokemonTeamDivH4Container.append(pokemonTeamH4)
 
 
 //Visar lagets status i myPokemonTeam, ifall du kan fylla på mer i laget eller inte
-
 function showPokemonTeamStatus () {
     if (myPokemonTeam.length < 3 ) {
         pokemonTeamH4.style.display = 'block'
@@ -40,7 +39,6 @@ function showPokemonTeamStatus () {
 } 
 
 //funktion som lägger till text att man har lagt till en pokemon till sitt team 
-
 function addMessageToMyTeam (pokemonButton) {
     const messageContainer = document.createElement('div')
     messageContainer.classList = ('message-container')
@@ -48,10 +46,10 @@ function addMessageToMyTeam (pokemonButton) {
     message.classList.add('message');
     message.innerText = 'Added to my team'
     pokemonButton.insertAdjacentElement('afterend', message)
+    
     setTimeout(() => {
         message.remove();
     },2000)
-//insertAdjacentElement
 }
 
 //funktion som lägger till text att som säger att laget är fullt och att den läggs in i reserv laget. 

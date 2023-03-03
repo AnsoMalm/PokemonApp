@@ -85,20 +85,3 @@ findPokemonInput.addEventListener('keyup', async() => {
 });
 
 
-//fixa koden så att dem ligger i olika kataloger. 
-
-
-
-//PRIO 2
-//fixa alll css på sidan så den är snygg
-//fixa responsiviteten på sidan från smal till större skärm 
-
-//Göra codereview  CHECK!
-//göra 2 tester CHECK 1 - 1 test kvar!
-
-
-//Sista prio 4
-//Lägga över i main (när allt är färdigt)
-//lägga upp det på en sida, antingen surge.sh eller github.page 
-//fixa rapporten 
-
