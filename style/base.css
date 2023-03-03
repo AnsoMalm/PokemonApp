@@ -1,3 +1,5 @@
+@import './buttonstyle.css';
+
 html {
 	height: 100%;
 	scroll-behavior: smooth;
@@ -61,46 +63,6 @@ h4 {
 }
 
 /* vy-1 börjar här*/
-
-#champion-btn, #team-btn, .pokemon-button {
-	padding: 1em; 
-	border-radius: 20px;
-	background-color: #E3350D;
-	border: 1px solid black; 
-	font-weight: bold;
-	margin: 0.7em 0.3em;
-	background: linear-gradient(to bottom right, #d12847, #f4ff5a);
-	border: 0;
-	border-radius: 20px;
-	color: #FFFFFF;
-	cursor: pointer;
-	display: inline-block;
-	font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-	font-size: 18px;
-	font-weight: 500;
-	line-height: 2.5;
-	outline: transparent;
-	padding: 0.4rem 1rem;
-	text-align: center;
-	text-decoration: none;
-	transition: box-shadow .2s ease-in-out;
-	user-select: none;
-	-webkit-user-select: none;
-	touch-action: manipulation;
-	white-space: nowrap;
-  }
-  
-  #champion-btn:not([disabled]):hover {
-	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
-  }
-  
-  #team-btn:not([disabled]):hover {
-	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
-}
-
-.pokemon-button:not([disabled]):hover {
-	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
-}*/
 
 /*När man trycker på knappen för att lägga till pokemon får man upp ett meddelande*/
 .message-container {
@@ -218,23 +180,7 @@ h4 {
 }
 
 
-.remove-button {
-	margin: 0.3em;
-	background-color: rgb(223, 198, 33);
-	padding: 1em; 
-	border-radius: 2em;
-	border: 1px solid rgb(174, 158, 53);
-	font-weight: bold;
-	font-size: 1rem;
-	color: white;
 
-}
-.remove-button:hover {
-	background-color: #ca5928;
-	color: black;
-
-}
-*/
 /*My reservteam - längre ner på sidan*/
 
 .my-reserve-list-container {
@@ -258,25 +204,7 @@ h4 {
 	width: 100%;
 }
 
-
-.add-button {
-	background-color: #d18828;
-	padding: 1em; 
-	font-size: 1rem; 
-	border: 1px solid #ae895a;
-	border-radius: 2em;
-	font-weight: bold;
-	color: white;
-
-}
-
-.add-button:hover {
-	background-color: #96c625;
-	color: black;
-}
-
-
-/*för större skärm*/
+/*Responsiviteten för större skärm*/
 
 @media screen and (min-width: 600px) {
 
